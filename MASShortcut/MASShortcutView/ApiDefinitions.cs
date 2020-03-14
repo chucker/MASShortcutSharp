@@ -6,14 +6,14 @@ using ObjCRuntime;
 
 namespace MASShortcut
 {
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const MASShortcutBinding;
-		[Field ("MASShortcutBinding")]
-		NSString MASShortcutBinding { get; }
-	}
+	//[Static]
+	//[Verify (ConstantsInterfaceAssociation)]
+	//partial interface Constants
+	//{
+	//	// extern NSString *const MASShortcutBinding;
+	//	[Field ("MASShortcutBinding")]
+	//	NSString MASShortcutBinding { get; }
+	//}
 
 	// @interface MASShortcutView : NSView
 	[BaseType (typeof(NSView))]
@@ -39,14 +39,14 @@ namespace MASShortcut
 		[Export ("shortcutValueChange", ArgumentSemantic.Copy)]
 		Action<MASShortcutView> ShortcutValueChange { get; set; }
 
-		// @property (assign, nonatomic) MASShortcutViewStyle style;
-		[Export ("style", ArgumentSemantic.Assign)]
-		MASShortcutViewStyle Style { get; set; }
+        //// @property (assign, nonatomic) MASShortcutViewStyle style;
+        //[Export("style", ArgumentSemantic.Assign)]
+        //MASShortcutViewStyle Style { get; set; }
 
-		// +(Class)shortcutCellClass;
-		[Static]
+        // +(Class)shortcutCellClass;
+        [Static]
 		[Export ("shortcutCellClass")]
-		[Verify (MethodToProperty)]
+		//[Verify (MethodToProperty)]
 		Class ShortcutCellClass { get; }
 
 		// -(void)setAcceptsFirstResponder:(BOOL)value;

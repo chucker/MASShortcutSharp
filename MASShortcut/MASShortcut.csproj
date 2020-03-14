@@ -42,6 +42,11 @@
   <ItemGroup>
     <ObjcBindingApiDefinition Include="MASShortcut\ApiDefinitions.cs" />
     <ObjcBindingApiDefinition Include="MASShortcutView\ApiDefinitions.cs" />
+    <ObjcBindingApiDefinition Include="MASShortcutValidator\ApiDefinitions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="MASShortcutView\StructsAndEnums.cs" />
+    <ObjcBindingApiDefinition Include="MASShortcutValidator\StructsAndEnums.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.ObjcBinding.CSharp.targets" />
 </Project>

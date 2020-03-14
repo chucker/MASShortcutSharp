@@ -38,12 +38,12 @@ namespace MASShortcut
 
 		// -(instancetype)initWithKeyCode:(NSInteger)code modifierFlags:(NSEventModifierFlags)flags;
 		[Export ("initWithKeyCode:modifierFlags:")]
-		IntPtr Constructor (nint code, NSEventModifierFlags flags);
+		IntPtr Constructor (nuint code, NSEventModifierFlags flags);
 
 		// +(instancetype)shortcutWithKeyCode:(NSInteger)code modifierFlags:(NSEventModifierFlags)flags;
 		[Static]
 		[Export ("shortcutWithKeyCode:modifierFlags:")]
-		MASShortcut ShortcutWithKeyCode (nint code, NSEventModifierFlags flags);
+		MASShortcut ShortcutWithKeyCode (nuint code, NSEventModifierFlags flags);
 
 		// +(instancetype)shortcutWithEvent:(NSEvent *)anEvent;
 		[Static]
