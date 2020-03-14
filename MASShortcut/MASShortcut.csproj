@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="MASShortcut\ApiDefinitions.cs" />
+    <ObjcBindingApiDefinition Include="MASShortcutView\ApiDefinitions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.ObjcBinding.CSharp.targets" />
 </Project>
