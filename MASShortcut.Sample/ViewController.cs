@@ -18,35 +18,57 @@ namespace MASShortcut.Sample
 			EnableF2.Activated += (o, e) => OnEnableF2 ();
 		}
 
-		NSObject f1Shortcut;
-		NSObject f2Shortcut;
+        MASShortcut f1Shortcut;
+		MASShortcut f2Shortcut;
 
-		void OnEnableF1 ()
+		void OnEnableF1()
 		{
-			if (f1Shortcut == null) {
+			var shortcutMonitor = MASShortcutMonitor.SharedMonitor();
+
+			if (f1Shortcut == null)
+			{
 				EnableF1.Title = "Disable Cmd-F1";
 				Label.StringValue = "Cmd-F1 is enabled";
-				var shortcut1 = new Shortcut.MASShortcut ((uint)NSKey.F1, (uint)NSEventModifierMask.CommandKeyMask);
-				f1Shortcut = Shortcut.MASShortcut.AddGlobalHotkeyMonitor (shortcut1, () => { Label.StringValue = "Cmd-F1 pressed"; });
-			} else {
+				var shortcut1 = new MASShortcut((uint)NSKey.F1, NSEventModifierFlags.Command);
+				if (shortcutMonitor.RegisterShortcut(shortcut1, () =>
+				{
+					Label.StringValue = "Cmd-F1 pressed";
+				}))
+				{
+					f1Shortcut = shortcut1;
+				}
+			}
+			else
+			{
 				EnableF1.Title = "Enable Cmd-F1";
 				Label.StringValue = "Cmd-F1 is disabled";
-				Shortcut.MASShortcut.RemoveGlobalHotkeyMonitor (f1Shortcut);
+				shortcutMonitor.UnregisterShortcut(f1Shortcut);
 				f1Shortcut = null;
 			}
 		}
 
 		void OnEnableF2 ()
 		{
-			if (f2Shortcut == null) {
+			var shortcutMonitor = MASShortcutMonitor.SharedMonitor();
+
+			if (f2Shortcut == null)
+			{
 				EnableF2.Title = "Disable Cmd-F2";
 				Label.StringValue = "Cmd-F2 is enabled";
-				var shortcut2 = new Shortcut.MASShortcut ((uint)NSKey.F2, (uint)NSEventModifierMask.CommandKeyMask);
-				f2Shortcut = Shortcut.MASShortcut.AddGlobalHotkeyMonitor (shortcut2, () => { Label.StringValue = "Cmd-F2 pressed"; });
-			} else {
+				var shortcut2 = new MASShortcut((uint)NSKey.F2, NSEventModifierFlags.Command);
+				if (shortcutMonitor.RegisterShortcut(shortcut2, () =>
+				{
+					Label.StringValue = "Cmd-F2 pressed";
+				}))
+				{
+					f2Shortcut = shortcut2;
+				};
+			}
+			else
+			{
 				EnableF2.Title = "Enable Cmd-F2";
 				Label.StringValue = "Cmd-F2 is disabled";
-				Shortcut.MASShortcut.RemoveGlobalHotkeyMonitor (f2Shortcut);
+				shortcutMonitor.UnregisterShortcut(f2Shortcut);
 				f2Shortcut = null;
 			}
 		}
