@@ -37,8 +37,8 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\External\MASShortcut.dylib">
-      <Kind>Dynamic</Kind>
+    <NativeReference Include="..\External\MASShortcut.framework">
+      <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
