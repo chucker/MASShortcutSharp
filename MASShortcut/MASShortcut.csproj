@@ -41,12 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="MASShortcut\ApiDefinitions.cs" />
-    <ObjcBindingApiDefinition Include="MASShortcutView\ApiDefinitions.cs" />
+    <ObjcBindingApiDefinition Include="MASShortcutMonitor\ApiDefinitions.cs" />
     <ObjcBindingApiDefinition Include="MASShortcutValidator\ApiDefinitions.cs" />
+    <ObjcBindingApiDefinition Include="MASShortcutView\ApiDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ObjcBindingApiDefinition Include="MASShortcutView\StructsAndEnums.cs" />
     <ObjcBindingApiDefinition Include="MASShortcutValidator\StructsAndEnums.cs" />
+    <ObjcBindingApiDefinition Include="MASShortcutView\StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MASShortcutMonitor\StructsAndEnums.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.ObjcBinding.CSharp.targets" />
 </Project>
