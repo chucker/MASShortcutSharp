@@ -41,7 +41,9 @@ Second, generate C# bindings:
 
 4. open the `.sln`. Some of the afore-generated code won't compile; much of it can just be commented out. Try looking at your favorite git client to see what has changed.
 
-5. do a release build. Or, you can do a debug build and play around with the sample application.
+5. restore the `MASShortcutView.h` to how it was. Otherwise, you'll break code signing!
+
+6. do a release build. Or, you can do a debug build and play around with the sample application.
 
 ## Use in Xamarin Forms
 
